@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Online Shopping site</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js">
+    </script>
+            <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        
+        /*====This is style for Navgiation===*/
+        
+        .login{
+            font-family: sans-serif;
+            font-size: 13px;
+            color: white;
+            margin-top: 28px;
+            transition: 0.15s;
+            text-align: center;
+            
+            
+        }
+        
+        .login:hover{
+            color: darkslategrey;
+            font-size: 13px;
+            
+            
+        }
+        
+        .text{
+            font-family: sans-serif;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cart{}
+        .text-c{}
+        @media screen and (max-width:360px){
+            .margin-left{
+                margin-left: 0px;
+            }
+            .text-c{
+              text-align: center;
+            }
+            
+             .cart{
+                 margin-top: 0px;
+                 text-align: right;
+                 padding-bottom:10px;
+               
+            }
+            
+            .container-fluid{
+            width: 360px;
+            margin: auto;      
+        }
+            .container{
+                width: 360px;
+                margin: auto;
+            }
+        }
+        
+        /*====THIS IS STYLE FOR PRODUCTS====*/
+         .image{
+             transition: 0.1s;
+             
+           
+        }
+        
+          .image:hover{
+           filter: brightness(105%)saturate(140%);
+           transform: scale(1.1);
+              
+              
+        }
+        
+        .p1{transition: 0.15s;
+        animation: zoom 1s 1;
+        }
+        
+        @keyframes zoom{
+            0%{transform: scale(0)};
+           100%{transform: scale(1)};
+        }
+        
+        .p1:hover{
+            filter: brightness(120%);
+            transform: scale(1.1);
+            
+            
+        }
+        
+        .ad{
+            transition: .2s;
+            
+        }
+        
+        .ad:hover{
+            transform: scale(1.1);
+            
+        }
+        
+        .foot a{
+            color: dimgrey;
+            
+        }
+        .foot a:hover{
+            text-decoration: none;
+            color: indianred;
+        }
+        
+        .stat_text{
+            font-family: sans-serif;
+            color: darkslategrey;
+            font-size: 15px;
+            padding: 20px 0px 20px 0px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .stat_text:hover{
+            color: orangered;
+        }
+        
+        .copy{
+            width: 100%;
+            height: 40px;
+            background-color: darkslategrey;
+            float: left;
+        }
+        
+         
+        
+        </style>
+    
+
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row" style="background:linear-gradient(to bottom, #66a6ff 0%, #89f7fe 100%);">
+                
+                <div class="col-sm-3 text-c" >
+            <!--====LOGO====-->
+            <a href="#"><img src="Online%20store.png" class="img-responsive" style="margin-left: 0px; margin-top: 20px"></a>
+                    </div>
+                
+                
+                <!--====MODAL LOGIN===-->
+                 <div class="col-sm-2 text-c">
+                  
+            <a href="#" style="text-decoration: none"><div class="login" data-toggle="modal" data-target="#arena" >Login or Signup</div></a>
+            
+            <div class="modal fade in" id="arena">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="close" data-dismiss="modal">x</a>
+                    
+                    <h3>Login</h3>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <b>Login</b> <br><br>
+                   
+                        <input type="text" placeholder="User Name or Email" class="form-control" required>
+                        <br><br>
+                        <b>Password</b>
+                        <br><br>
+                        
+                        <input type="password" placeholder="Password" class="form-control" required>
+                        
+                    </div>
+                    
+                    <div class="modal-footer">
+                    <h3><button type="submit" class="btn btn-primary">Login</button>
+                        <button class="btn btn-success">Signup</button>
+                        </h3>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+                 
+            </div>   
+            
+                <!--====SELECT LOCATION===-->
+                 <div class="col-sm-3 text-c">
+            <select class="form-control" style="margin-left: 0px; margin-top: 23px;">
+            <option>Select City</option>
+            <option>Mumbai</option>
+            <option>Ranchi</option>
+            <option>Delhi</option>
+            <option>Kolkata</option>
+            <option>Bokaro</option>
+            <option>Banglore</option>
+            <option>Gaya</option>
+            <option>Patna</option>
+            </select>
+                </div>
+                
+                <!--====SEARCH BAR===-->
+                 <div class="col-sm-3 text-c">
+                 
+            <div class="form-group" style="margin-top: 23px;margin-right: 0px;">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search..." class="form-control">
+                        <div class="input-group-addon">
+                        <span class="fa fa-search"></span>
+                        </div>
+                </div>
+                    </div>
+                </div>
+                
+                 <div class="col-sm-1 cart">
+                 
+             <!--====CART ICON===-->
+              <a href><span class="fa fa-shopping-cart" style="font-size: 30px; margin-top:25px; margin-right:0px;color: saddlebrown;"></span></a>
+                 
+                </div>
+                </div>
+                    </div>
+           
+            
+            <!--====NAV BAR===-->
+       <div class="container">
+           <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#abc">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="abc">
+            
+            <ul class="nav navbar-nav">
+            <li>     <a href="#" data-toggle="dropdown">Electronics<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Mobile</a></li>
+                <li><a href="#">Mobile Accessories</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Smart Wearable Tech</a></li>
+                <li><a href="#">Health Care Appliances</a></li>
+                <li><a href="#">Desktop PCs</a></li>
+                <li><a href="#">Computer Peripherals</a></li>
+                <li><a href="#">Camera</a></li>
+                <li><a href="#">Camera Accessories</a></li>
+                <li><a href="#">Smart Home Automation</a></li>
+                </ul>
+                
+                </li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">TVs & Appliances</a></li>
+            <li><a href="#">Home & Furniture</a></li>
+            <li><a href="#" data-toggle="dropdown">Baby & Kids<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Kid's Clothings</a></li>
+                <li><a href="#">Boy's Clothings</a></li>
+                <li><a href="#">Girl's Clothings</a></li>
+                <li><a href="#">Baby Boy Clothing</a></li>
+                <li><a href="#">Baby Girl Clothing</a></li>
+                <li><a href="#">Kids Footwear</a></li>
+                <li><a href="#">Boys Footwear</a></li>
+                <li><a href="#">Girls Footwear</a></li>
+                <li><a href="#">School Supplies</a></li>    
+                </ul>
+                </li>
+                <li><a href="#">Misc.</a></li>
+            </ul> 
+                </div>
+                
+        </nav>
+           </div>
+        </div>
+       <!--===CAROUSLE===-->
+        
+        <div class="container">
+            <div class="row">
+<div class="carousel slide" id="slide" data-ride="carousel" style="margin-top: -20px;">
+        <ol class="carousel-indicators">
+    <li class="active" data-target="slide" data-slide-to="0"></li>
+            <li class=""data-target="#slide" data-slide-to="1"></li>
+            <li class=""data-target="#slide" data-slide-to="2"></li>
+            </ol>
+    <div class="carousel-inner">
+   
+        <div class="item active">
+        <img src="home-office.jpg" class="img-responsive">
+        <div class="carousel-caption">
+        <h3>Laptops</h3>
+            <p>₹29,999 Onwords</p>
+        </div>
+        </div>
+       
+        <div class="item">
+        <img src="dslr.jpg" class="img-responsive">
+        <div class="carousel-caption">
+        <h3>Become a Photographer</h3>
+            <p>Hi quality DSLRS!</p>
+        </div>
+        </div>
+        
+        <div class="item">
+        <img src="earphone.jpg" class="img-responsive">
+        <div class="carousel-caption">
+        <h3>Earphones</h3>
+            <p>₹149 - ₹19,459</p>
+        </div>
+        </div>
+        
+        <div class="item">
+        <img src="iphone.jpg" class="img-responsive">
+        <div class="carousel-caption">
+        <h3>iPhone</h3>
+            <p>No Cost EMI up to 9 months</p>
+        </div>
+        </div>
+    
+        <a href="#slide" data-slide="prev" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a href="#slide" data-slide="next" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+        
+    </div>
+     </div>
+            </div>
+        </div>
+        
+        <!--====PRODUCTS===-->
+        <div class="container">
+        <div class="row">
+             <div class="col-sm-3">
+                 <br>
+                 
+            <div class="col-sm-12 p1" style="background-color: #744bff;border-radius: 10px;padding-bottom: 10px;padding-top: 10px;">
+                 
+                    <img src="bmw_cocept.jpg" class="img-responsive" style="border-radius: 10px;" >
+                <div class="text" style="margin-top: 20px;">BMW-225 CAR
+                    <br> <span style="font-family: quicksand;" >₹9.49 Crore No EMI</span></div>
+                 </div>    
+           </div>
+            
+            
+            <div class="col-sm-3">
+            <br>
+            <div class="col-sm-12 p1" style="background-color: red;border-radius: 10px;padding-bottom: 10px;padding-top: 10px;">
+                
+                    <img src="bmw.jpg" class="img-responsive" style="border-radius: 10px;" >
+                <div class="text" style="margin-top: 15px;">BMW-225 CAR
+                    <br> <span style="font-family: quicksand;" >₹9.49 Crore No EMI</span></div>
+                 </div>
+           </div>
+              <div class="col-sm-3">
+            <br>
+            <div class="col-sm-12 p1" style="background-color: #9de53c;border-radius: 10px;padding-bottom: 10px;padding-top: 10px;">
+
+                    <img src="bmw_r80.jpg" class="img-responsive" style="border-radius: 10px;" >
+                <div class="text" style="margin-top: 15px;">BMW-225 CAR
+                    <br> <span style="font-family: quicksand;" >₹9.49 Crore No EMI</span></div>
+                 </div>
+           </div>
+           <div class="col-sm-3">
+            <br>
+            
+               <div class="col-sm-12 p1" style="background-color: #f03077;border-radius: 10px;padding-bottom: 10px;padding-top: 10px;">
+                 
+                        
+                    <img src="capri-ford.jpg" class="img-responsive" style="border-radius: 10px;" >
+                <div class="text" style="margin-top: 15px;">BMW-225 CAR
+                    <br> <span style="font-family: quicksand;" >₹9.49 Crore No EMI</span></div>
+                 </div>
+                
+           </div>
+            
+            
+            <!--====DEALS OF THE DAY====-->
+          <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="col-sm-12" style="background-color: #f1f1f1; border-radius: 10px; margin-top: 20px;">
+            <div class="col-sm-3 text-center" style=" border-radius: 10px; margin-top: px; padding-bottom:10px;">
+            
+             
+                <span style="font-family: sans-serif; font-size: 25px; color:#1d1d1d;"><b>DEAL OF THE DAY</b></span>
+                <br><br>
+                <span class="glyphicon glyphicon-time" style="font-size: 33px; color: dodgerblue;"></span>
+                <p id="timer" style="font-size: 23px; color: dodgerblue;" class="text-center" ></p>     
+        <script>
+                var time=setInterval(function(){timer()},1000)
+                function timer(){
+                    var d=new Date()
+                    
+                    document.getElementById("timer").innerHTML=d.toLocaleTimeString()
+                }
+                </script>
+                </div>
+            <div class="col-sm-9">
+                <div class="col-sm-12" style="padding-top: 14px;">
+                    <img src="Banner%20ad.jpg" class="img-responsive img-rounded image">
+                    </div>
+                    </div>
+                 </div>
+                </div>
+                </div>
+            </div>
+            
+            <div class="container">
+            <div class="row">
+                
+                <!--====OFFERS FOR YOU====-->
+                <div class="col-sm-3 text-center">
+                    <br><br>
+                    <div class="col-sm-12" style="padding-top:50px; padding-bottom:80px; background:linear-gradient(to right, #ffe9fb 0%, white 80%)">
+                <br><br>
+                    <span style="font-family: sans-serif; font-size: 20px; color:#1d1d1d;"><b>OFFERS FOR YOU</b></span>
+                </div>
+                    </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="mixi.jpeg" class="img-responsive img-rounded image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Mixer</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 50% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">USHA & more</span></p>
+                </div>
+                </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="music.jpeg" class="img-responsive image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Earphones</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 60% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">JBL & more</span></p>
+                </div>
+                </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="trimmer.jpeg" class="img-responsive image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Trimmers</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 40% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">Philips & more</span></p>
+                </div>
+                </div>
+                </div>
+                </div>
+            
+            <!--====YOU MAY LIKE====-->
+                <div class="col-sm-3 text-center">
+                    <br><br>
+                    <div class="col-sm-12" style="padding-top:50px; padding-bottom:80px; background:linear-gradient(to right,#ffe9fb 0%, white 80%)">
+                <br><br>
+                    <span style="font-family: sans-serif; font-size: 20px; color:#1d1d1d;"><b>YOU MAY LIKE</b></span>
+                </div>
+                    </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="watch.jpg" class="img-responsive image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Watch</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 85% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">Titan & more</span></p>
+                </div>
+                </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="towel.jpg" class="img-responsive image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Towel</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 60% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">Axit & more</span></p>
+                </div>
+                </div>
+                    
+                    
+                <div class="col-sm-3">
+                    <div class="col-sm-12 text-center">
+                    <br><br>
+                <img src="iron.jpg" class="img-responsive image">
+                        <span style="font-family: sans-serif; font-size: 20px;"><b>Iron</b></span>
+                        <p><span style="font-family: sans-serif; font-size: 15px; color: saddlebrown;">Up to 30% off</span></p>
+                        <p><span style="font-family: sans-serif; font-size: 12px; color: dimgrey;">Philips & more</span></p>
+                </div>
+                </div>
+            </div>
+                </div>
+        <br>
+        
+        <!--==========AD AD AD AD==========-->
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-4 ad">
+            <img src="ad%20slide1%20.jpg" class="img-rounded img-responsive">
+            </div>
+            
+            <div class="col-sm-4 ad">
+            <img src="ad%20slide2%20.jpg" class="img-rounded img-responsive">
+            </div>
+            
+            <div class="col-sm-4 ad">
+            <img src="ad%20slide3%20.jpg" class="img-rounded img-responsive">
+            </div>
+            </div>
+        </div>
+        
+        
+        <!--==========FOTTER FOTTER==========-->
+        <div class="container">
+        <div class="row">
+        </div>
+        <br>
+            <div class="col-sm-12 " style="background-color: lightgrey;">
+            <div class="container">
+            <div class="row">
+                <div class="col-sm-4 foot" style="font-family: sans-serif; color: darkslategrey;">
+                    <br>
+                <b>HELP</b>
+                    <br><br>
+                    <a href=""><p>Payments</p></a>
+                    <a href=""><p>Shipping</p></a>
+                    <a href=""><p>Cancellation & Return</p></a>
+                    <a href=""><p>FAQ</p></a>
+                    
+                </div>
+                
+                <div class="col-sm-4 foot" style="font-family: sans-serif; color: darkslategrey;">
+                    <br>
+                <b>MISC</b>
+                    <br><br>
+                    <a href=""><p>Online Shopping</p></a>
+                    <a href=""><p>Affiliate Program</p></a>
+                    <a href=""><p>Gift Card</p></a>
+                    <a href=""><p>Sitemap</p></a>
+                    
+                </div>
+                
+                <div class="col-sm-4 foot" style="font-family: sans-serif; color: darkslategrey;">
+                    <br>
+                <b>ONLINE STORE</b>
+                    <br><br>
+                    <a href=""><p>Contact Us</p></a>
+                    <a href=""><p>About Us</p></a>
+                    <a href=""><p>Careers</p></a>
+                    <a href=""><p>Press</p></a>
+                    <a href=""><p>Sale on Online Store</p></a>
+                    
+                </div>
+                
+                </div>
+                
+                
+                </div>
+            </div>
+                </div>
+        
+        <!--==========SITE STAT==========-->
+       
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-12" >
+                
+            <div class="col-sm-4" style="border: 1px grey solid;">
+                <div class="stat_text"><i class="fa fa-2x fa-map-marker">
+                    </i><p>TRACK YOUR<br>ORDER</p></div>
+            </div>
+            <div class="col-sm-4" style="border: 1px grey solid;">
+                <div class="stat_text"><i class="fa fa-2x fa-inbox"></i><p>FREE & EASY<br>RETURNS</p></div>
+            </div>
+            <div class="col-sm-4" style="border: 1px grey solid;">
+                <div class="stat_text"><i class="fa fa-2x fa-ban"></i><p>ONLINE<br>CANCELLATIONS</p></div>
+            </div>
+          
+            </div>
+            </div>
+        </div>
+        
+         <!--==========COPY RIGHT==========-->
+        <div class="copy" style="color: white; padding-top:9px; text-align: center;">&copy; OnlineStore 2018</div>
+            
+                
+        
+    </body>
+</html>
